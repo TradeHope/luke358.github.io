@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>A Luke358 Day&#39;s Lab</title>
+  
+  <subtitle>Welcome</subtitle>
+  <link href="http://luke358.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://luke358.github.io/"/>
+  <updated>2023-07-11T05:49:59.456Z</updated>
+  <id>http://luke358.github.io/</id>
+  
+  <author>
+    <name>Luke358</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>推荐文章</title>
+    <link href="http://luke358.github.io/2023/07/11/tui-jian-wen-zhang/"/>
+    <id>http://luke358.github.io/2023/07/11/tui-jian-wen-zhang/</id>
+    <published>2023-07-11T05:46:55.000Z</published>
+    <updated>2023-07-11T05:49:59.456Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;测试&quot;&gt;&lt;a href=&quot;#测试&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>推荐文章</title>
+    <link href="http://luke358.github.io/2023/07/11/tui-jian-wen-zhang-1/"/>
+    <id>http://luke358.github.io/2023/07/11/tui-jian-wen-zhang-1/</id>
+    <published>2023-07-11T05:46:55.000Z</published>
+    <updated>2023-07-11T06:18:29.484Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;测试&quot;&gt;&lt;a href=&quot;#测试&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>测试一下</title>
+    <link href="http://luke358.github.io/2023/07/10/ce-shi-yi-xia/"/>
+    <id>http://luke358.github.io/2023/07/10/ce-shi-yi-xia/</id>
+    <published>2023-07-10T02:56:49.000Z</published>
+    <updated>2023-07-10T02:58:04.958Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;good</summary>
+        
+      
+    
+    
+    
+    <category term="测试" scheme="http://luke358.github.io/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+    <category term="测试" scheme="http://luke358.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://luke358.github.io/2023/07/10/hello-world/"/>
+    <id>http://luke358.github.io/2023/07/10/hello-world/</id>
+    <published>2023-07-10T01:16:30.911Z</published>
+    <updated>2023-07-10T01:16:30.911Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
