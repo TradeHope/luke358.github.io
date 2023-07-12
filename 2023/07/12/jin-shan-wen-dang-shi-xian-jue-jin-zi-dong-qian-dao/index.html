@@ -4,9 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="推荐文章, A Luke358 Day&#39;s Lab">
-    <meta name="description" content="测试今天天气不错
-">
+    <meta name="keywords" content="金山文档实现掘金自动签到, A Luke358 Day&#39;s Lab">
+    <meta name="description" content="掘金自动领福利：无需部署，无需服务器，实现掘金每日自动签到本教程介绍了如何通过金山文档网页版实现掘金每日自动签到功能。
+一、访问金山文档进入金山文档网页版： https://www.kdocs.cn/。
+二、创建空表格和脚本随便新建一个空表">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>推荐文章 | A Luke358 Day&#39;s Lab</title>
+    <title>金山文档实现掘金自动签到 | A Luke358 Day&#39;s Lab</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -351,12 +352,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">推荐文章</h1>
+                    <h1 class="description center-align post-title">金山文档实现掘金自动签到</h1>
                 </div>
             </div>
         </div>
@@ -378,12 +379,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E8%84%9A%E6%9C%AC/">
+                                <span class="chip bg-color">脚本</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                编程
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -392,7 +406,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-07-11
+                    2023-07-12
                 </div>
                 
 
@@ -401,14 +415,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    8
+                    758
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -431,8 +445,162 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>今天天气不错</p>
+                <h1 id="掘金自动领福利：无需部署，无需服务器，实现掘金每日自动签到"><a href="#掘金自动领福利：无需部署，无需服务器，实现掘金每日自动签到" class="headerlink" title="掘金自动领福利：无需部署，无需服务器，实现掘金每日自动签到"></a>掘金自动领福利：无需部署，无需服务器，实现掘金每日自动签到</h1><p>本教程介绍了如何通过金山文档网页版实现掘金每日自动签到功能。</p>
+<h2 id="一、访问金山文档"><a href="#一、访问金山文档" class="headerlink" title="一、访问金山文档"></a>一、访问金山文档</h2><p>进入金山文档网页版： <a target="_blank" rel="noopener" href="https://www.kdocs.cn/%E3%80%82">https://www.kdocs.cn/。</a></p>
+<h2 id="二、创建空表格和脚本"><a href="#二、创建空表格和脚本" class="headerlink" title="二、创建空表格和脚本"></a>二、创建空表格和脚本</h2><p>随便新建一个空表格，点击【效率】-【高级开发】-【AirScript脚本编辑器】：</p>
+<p><img src="/../medias/featureimages/1.png"></p>
+<p>点击【创建脚本】-【文档共享脚本】<br><img src="/../medias/featureimages/2.png"></p>
+<p>点击【服务】-【添加服务】，将网络API添加<br><img src="/../medias/featureimages/3.png"></p>
+<h2 id="三、编辑脚本"><a href="#三、编辑脚本" class="headerlink" title="三、编辑脚本"></a>三、编辑脚本</h2><pre class="line-numbers language-none"><code class="language-none">
+const JUEJIN_COOKIE = "你的掘金cookie";
+// 抽奖
+const drawFn = async () =&gt; {
 
+  console.log('drawFn')
+  // 查询今日是否有免费抽奖机会
+  const todayRes = HTTP.fetch('https://api.juejin.cn/growth_api/v1/lottery_config/get', {
+    headers: {
+      cookie: JUEJIN_COOKIE
+    },
+    method: 'GET',
+    credentials: 'include'
+  });
+  const today = todayRes.json()
+
+  if (today.err_no !== 0) return console.warn('免费抽奖失败！');
+  if (today.data.free_count === 0) return console.log('今日已经免费抽奖！');
+
+  // 免费抽奖
+  const drawRes = HTTP.fetch('https://api.juejin.cn/growth_api/v1/lottery/draw', {
+    headers: {
+      cookie: JUEJIN_COOKIE
+    },
+    method: 'POST',
+    credentials: 'include'
+  });
+  const draw = drawRes.json();
+  if (draw.err_no !== 0) return console.warn('免费抽奖失败！');
+  [3, 4].includes(draw.data.lottery_type) ? alert(`恭喜抽到：${draw.data.lottery_name}`) : console.log(`恭喜抽到：${draw.data.lottery_name}`);
+};
+
+// 沾一沾
+const dipLucky = async () =&gt; {
+  // 获取列表
+  const lukyRes = HTTP.fetch('https://api.juejin.cn/growth_api/v1/lottery_history/global_big', {
+    headers: {
+      cookie: JUEJIN_COOKIE
+    },
+    method: 'POST',
+    credentials: 'include'
+  });
+  const luky = lukyRes.json();
+  const { err_no, data } = luky
+  if(err_no !== 0) {
+    console.warn('获取沾一沾列表失败')
+    return;
+  }
+  console.warn('沾一沾列表获取成功')
+
+  const lottery_history_id = data.lotteries[0].history_id
+
+  // 开沾
+  const dipRes = HTTP.fetch('https://api.juejin.cn/growth_api/v1/lottery_lucky/dip_lucky', {
+    headers: {
+      cookie: JUEJIN_COOKIE
+    },
+    method: 'POST',
+    credentials: 'include',
+    body: `{lottery_history_id: ${lottery_history_id}}`
+  });
+  const dip = dipRes.json();
+  if(dip.err_no !== 0) {
+    console.warn('沾一沾失败')
+    return
+  }
+  if(dip.data.has_dip) {
+    console.log('今日沾过了~')
+  } else {
+    console.log('沾一沾成功')
+  }
+}
+
+// 收集bug 待测试
+const bugFix = async () =&gt; {
+
+  // bug list
+  // https://api.juejin.cn/user_api/v1/bugfix/not_collect?aid=2608&amp;uuid=7069996992693732879
+  const bugsRes = HTTP.fetch('https://api.juejin.cn/user_api/v1/bugfix/not_collect', {
+    headers: {
+      cookie: JUEJIN_COOKIE
+    },
+    method: 'POST',
+    credentials: 'include'
+  });
+  const bugs = bugsRes.json();
+  console.log(bugs)
+  // but fix
+  // { bug_time: 1658678400, bug_type: 8 }
+  // https://api.juejin.cn/user_api/v1/bugfix/collect?aid=2608&amp;uuid=7069996992693732879
+  if(bugs.err_no !== 0) return console.warn('bugs获取失败');
+  const total = bugs.data.length;
+  let count = 0;
+  console.log(`发现${total} 个bug, 准备清除中...`)
+  for(let bug of bugs.data) {
+    const dt =  { bug_time:  bug.bug_time, bug_type:  bug.bug_type  };
+    const collectRes = HTTP.fetch('https://api.juejin.cn/user_api/v1/bugfix/collect', {
+      headers: {
+        cookie: JUEJIN_COOKIE
+      },
+      method: 'POST',
+      credentials: 'include',
+      body: JSON.stringify(dt)
+    });
+    const collect = collectRes.json();
+    if(collect.err_no === 0) {
+      count++;
+    }
+  }
+  console.log(`收集bug成功: ${count}, 失败: ${total - count}`);
+}
+// 签到
+(async () =&gt; {
+
+  // 查询今日是否已经签到
+  const today_status = await HTTP.fetch('https://api.juejin.cn/growth_api/v1/get_today_status', {
+    headers: {
+      cookie: JUEJIN_COOKIE
+    },
+    method: 'GET',
+    credentials: 'include'
+  }).then(res =&gt; res.json());
+  if (today_status.err_no !== 0) return console.warn('签到失败！');
+  if (today_status.data) {
+    console.log('今日已经签到！');
+    await drawFn();
+    await dipLucky();
+    // await bugFix();
+    return;
+  }
+
+  // 签到
+  const check_in = await HTTP.fetch('https://api.juejin.cn/growth_api/v1/check_in', {
+    headers: {
+      cookie: JUEJIN_COOKIE
+    },
+    method: 'POST',
+    credentials: 'include'
+  }).then((res) =&gt; res.json());
+
+  if (check_in.err_no !== 0) return console.warn('签到失败！');
+  console.log(`签到成功！当前积分；${check_in.data.sum_point}`);
+  await drawFn();
+  await dipLucky()
+  // await bugFix();
+})();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>修改上面的JUEJIN_COOKIE从浏览器获得<br><img src="/../medias/featureimages/4.png"></p>
+<h2 id="四、运行脚本"><a href="#四、运行脚本" class="headerlink" title="四、运行脚本"></a>四、运行脚本</h2><p><img src="/../medias/featureimages/5.png"><br>确认出现“执行完毕”字样，否则看提示错误信息。</p>
+<h2 id="五、添加定时"><a href="#五、添加定时" class="headerlink" title="五、添加定时"></a>五、添加定时</h2><p><img src="/../medias/featureimages/6.png"><br>这里选择你创建的对应脚本</p>
+<h2 id="后续会加入邮箱提示功能"><a href="#后续会加入邮箱提示功能" class="headerlink" title="后续会加入邮箱提示功能"></a>后续会加入邮箱提示功能</h2>
                 
             </div>
             <hr/>
@@ -458,7 +626,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://luke358.github.io/2023/07/11/tui-jian-wen-zhang/">http://luke358.github.io/2023/07/11/tui-jian-wen-zhang/</a>
+                    <a href="http://luke358.github.io/2023/07/12/jin-shan-wen-dang-shi-xian-jue-jin-zi-dong-qian-dao/">http://luke358.github.io/2023/07/12/jin-shan-wen-dang-shi-xian-jue-jin-zi-dong-qian-dao/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -495,7 +663,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E8%84%9A%E6%9C%AC/">
+                                    <span class="chip bg-color">脚本</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -840,9 +1012,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2023/07/12/jin-shan-wen-dang-shi-xian-jue-jin-zi-dong-qian-dao/">
                     <div class="card-image">
@@ -860,9 +1033,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -875,6 +1048,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -893,7 +1067,7 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/07/11/tui-jian-wen-zhang-1/">
+                <a href="/2023/07/11/tui-jian-wen-zhang/">
                     <div class="card-image">
                         
                         
